@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movie Den.</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: soft;
+    }
+
+    body{
+        background:#000;
+        color:white;
+        overflow-x:hidden;
+    }
+
+    @font-face {
+        font-family: soft ;
+        src: url("LeagueSpartan-Bold.otf");
+    }
+
+    /* BG */
+    .hero{
+        width:100%;
+        height:100vh;
+        background:url('batman.png');
+        background-size:cover;
+        background-position:center;
+        position:relative;
+        padding:40px 60px;
+    }
+
+    /* NAV */
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 0;
+    }
+    nav .logo{
+        display:flex;
+        align-items:center;
+        font-size:32px;
+        font-weight:700;
+    }
+    nav .logo img{
+        width:40px;
+        margin-right:10px;
+    }
+    nav ul{
+        display:flex;
+        list-style:none;
+    }
+    nav ul li{
+        margin:0 20px;
+        font-size:16px;
+        cursor:pointer;
+    }
+    nav .icons{
+        display:flex;
+        gap:20px;
+        font-size:22px;
+        cursor:pointer;
+    }
+
+    .navlinks a {
+        text-decoration: none;
+        margin-right: 60px;
+        color: white
+    }
+
+    /* CONTENT */
+    .left{
+        width:45%;
+        margin-top:100px;
+    }
+    .title{
+        font-size:60px;
+        font-weight:900;
+        color: black;
+    }
+    .meta{
+        margin:15px 0;
+        font-size:20px;
+        color: black;
+    }
+    .navLinks a:hover {
+        scale: 1.2;
+        transition: ease 0.3s;
+        
+    }
+
+    .icons a {
+        color: white;
+        text-decoration: none;
+    }
+    .icons a:hover {
+        scale: 1.2;
+        transition: ease 0.5s;
+
+    }
+    .stars{
+        color:gold;
+        margin:10px 0;
+        font-size:22px;
+    }
+    .desc{
+        margin-top:15px;
+        line-height:1.5;
+        width:80%;
+        font-size:16px;
+    }
+
+    .btns{
+        margin-top:30px;
+        display:flex;
+        gap:20px;
+    }
+    .btn{
+        padding:12px 25px;
+        font-size:18px;
+        border:none;
+        cursor:pointer;
+        border-radius:6px;
+        font-weight:700;
+    }
+    .buy{
+        background:rgb(0, 0, 0);
+        color:rgb(255, 255, 255);
+        font-size: medium;
+        box-shadow: #000;
+    }
+    .buy:hover {
+        scale: 1.1;
+        transition: ease 0.5s;
+    }
+    .shows{
+        background:transparent;
+        border:2px solid white;
+        color:white;
+        font-size: medium;
+        box-shadow: #000;
+    }
+    .shows:hover {
+        scale: 1.1;
+        transition: ease 0.5s;
+    }
+
+    .watch{
+        display:flex;
+        align-items:center;
+        margin-top:35px;
+        font-size:18px;
+        margin-top: 100px;
+    }
+    .watch img{
+        width:35px;
+        margin-right:10px;
+    }
+    .watch a:hover {
+        scale: 1.2;
+        transition: ease 0.3s;
+    }
+
+    /* POSTER */
+    .poster{
+        position:absolute;
+        right:80px;
+        top:50%;
+        transform:translateY(-50%);
+    }
+    .poster img{
+        width: 900px;
+        height: 500px;
+        border-radius:6px;
+        transform: translateX(70%);
+        transform: translateY(7%);
+
+    }
+
+
+
+    /* hero section */
+    .heroSection {
+        width: 100vw;
+        height: 140vh;
+        background-color: black;
+    }
+
+    .heroContent {
+        justify-content: center;
+        margin-top: 8.5vh;
+
+    }
+
+    .heroText {
+        margin-left: 5vw;
+        
+    }
+    .heroImages {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 1.7rem;
+        margin-top: 4vh;
+        margin-left: 2.3vw;
+    }
+
+
+    /* footer  */
+
+    .footer {
+    width: 100vw;
+    background: #b51914;
+    color: white;
+    padding: 80px 70px 40px 70px;
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    grid-template-columns: 1.1fr 1.8fr 120px;
+    align-items: start;
+    position: relative;
+}
+
+/* -------- LEFT SECTION -------- */
+.footer-left h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.footer-left .tagline {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.footer-mascot {
+    width: 90px;
+    margin-top: 10px;
+}
+
+/* -------- CENTER LINKS -------- */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* -------- POPCORN IMAGE -------- */
+.popcorn {
+    width: 80px;
+    margin-top: 10px;
+}
+
+/* -------- DIVIDER LINE -------- */
+.line {
+    grid-column: 1 / span 3;
+    width: 100%;
+    border-bottom: 2px solid white;
+    margin: 50px 0 30px 0;
+}
+
+/* -------- SOCIALS + COPYRIGHT -------- */
+.footer-bottom {
+    grid-column: 1 / span 3;
+    text-align: center;
+}
+
+.socials a i {
+    font-size: 30px;
+    margin: 0 12px;
+}
+
+.copy {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <div class="logo">
+                <img src="tvicon.png" />
+                Movie Den.
+            </div>
+
+            <div class="navlinks">
+
+            <a href="#">Home</a>
+             <a href="#">About</a>
+              <a href="#">Series</a>
+               <a href="#">Tv shows</a>
+            </div>
+            
+            <div class="icons">
+                <a href="#">☰</a>
+                <a href="#">🔍︎</a>
+                <a href="#">⩍</a>
+                <a href="#">✪</a>
+               
+            </div>
+        </nav>
+
+        <div class="left">
+            <div class="title">Batman Beyond</div>
+            <div class="meta">2022 - Action/Thriller - Film</div>
+            <div class="stars">★★★★☆</div>
+
+            <div class="desc">
+                The Batman is a 2022 American superhero film based on the DC Comics character Batman. Directed by Matt Reeves from a screenplay he wrote with Peter Craig, it is a reboot of the Batman film franchise.
+            </div>
+
+            <div class="btns">
+                <button class="btn buy">BUY TICKET</button>
+                <button class="btn shows">VIEW SHOWS</button>
+            </div>
+
+            <div class="watch">
+                <a style="  color: white; text-decoration: none;" href="#"><pre>▶  WATCH TRAILER</a></pre>
+            </div>
+        </div>
+
+        <div class="poster">
+            <img src="batposter.png" />
+        </div>
+    </div>
+
+
+    <!-- hero section -->
+     <div class="heroSection">
+        <div class="heroContent">
+            <div class="heroContainer">
+                <div class="heroText">
+                    <h1>Recommended for you</h1>
+                    <div class="imgContainer">
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    
+
+                    
+                </div>
+
+                 <div class="heroText">
+                    <h1 style="color: white; text-decoration: none;">☀️ Airing this summer!         
+                    </h1>
+                    <div class="imgContainer">
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    <div class="heroImages">
+                    <p><a href="#">
+                    <img src="superman.jpg" alt="superman" width="150" height="160">
+                    <h2 >Superman</h1>
+                    <h3>⭐⭐⭐⭐</h1>
+                    </div>
+                    
+
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- footer  -->
+
+     <footer class="footer">
+
+    <div class="footer-left">
+        <h2>Movie den</h2>
+        <p class="tagline">your one spot for entertainment</p>
+        <img src="mascot.png" class="footer-mascot" />
+    </div>
+
+    <div class="footer-links">
+        <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#">affiliates</a></li>
+            <li><a href="#">resources</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#">affiliates</a></li>
+            <li><a href="#">resources</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#">affiliates</a></li>
+            <li><a href="#">resources</a></li>
+        </ul>
+    </div>
+
+    <img src="popcorn.png" class="popcorn" />
+
+    <div class="line"></div>
+
+    <div class="footer-bottom">
+        <div class="socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copy">Copyright all rights reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
